@@ -5,9 +5,12 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import Link from "next/link";
-import Footer from "@/components/Footer";
 
-const Recipe = ({ params }) => {
+interface Props {
+  params?: any;
+}
+
+const Recipe = ({ params }: Props) => {
   const [recipe, setRecipe] = useState([]);
 
   useEffect(() => {
@@ -25,9 +28,9 @@ const Recipe = ({ params }) => {
     getData();
   }, []);
 
-  let ingredients = [];
-  let measures = [];
-  let empty = [];
+  let ingredients: string[] = [];
+  let measures: string[] = [];
+  let empty: string[] = [];
 
   if (recipe && recipe?.length > 0) {
     for (let x in recipe[0]) {
@@ -95,7 +98,7 @@ const Recipe = ({ params }) => {
                 <h2 className="text-2xl font-bold">How to Make</h2>
                 <p className="text-justify">{item["strInstructions"]}</p>
               </div>
-              <div className="flex">
+              {/* <div className="flex">
                 {item["strTags"]?.split(",").map((ele, i) => (
                   <div key={i} className="mx-2">
                     <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
@@ -103,7 +106,7 @@ const Recipe = ({ params }) => {
                     </p>
                   </div>
                 ))}
-              </div>
+              </div> */}
               {item["strYoutube"] ? (
                 <div className="flex flex-col  py-4 gap-4 hidden md:block">
                   <h2 className="text-2xl font-bold">Watch Video</h2>
