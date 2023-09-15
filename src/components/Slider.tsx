@@ -19,12 +19,13 @@ const Slider = () => {
       id: 1,
       title: "Bringing you the best recipes...",
       image:
-        "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
       id: 2,
       title: "From the exotic to the comfort...",
-      image: "/bg2.png",
+      image:
+        "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
       id: 3,
@@ -40,7 +41,7 @@ const Slider = () => {
           {data[currentSlide].title}
         </h1>
       </div>
-      <div className="flex-1 relative lg:h-full order-first" w-full>
+      <div className="flex-1 relative lg:h-full" w-full>
         <Image
           src={data[currentSlide].image}
           alt=""
