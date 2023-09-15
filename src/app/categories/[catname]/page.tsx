@@ -57,12 +57,12 @@ const MealList = ({ params }) => {
               return meals;
             }
 
-            if (item.strMeal.toLowerCase().includes(text.toLowerCase())) {
+            if (item["strMeal"].toLowerCase().includes(text.toLowerCase())) {
               return item;
             }
           })
-          .map((ele) => (
-            <Card meal={ele} />
+          .map((ele, index) => (
+            <Card meal={ele} key={index} />
           ))}
       </div>
     </div>

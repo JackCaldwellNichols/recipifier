@@ -18,10 +18,10 @@ const Blog = () => {
           </h1>
           <p className="text-white xl:text-xl">
             Cooking is an age-old art that has evolved over centuries,
-            transcending cultures and boundaries. It's a skill that combines
+            transcending cultures and boundaries. It&#39;s a skill that combines
             science, creativity, and tradition to produce delicious and
-            nourishing meals. Whether you're a seasoned chef or a novice in the
-            kitchen, the world of cooking is a vast and fascinating one to
+            nourishing meals. Whether you&#39;re a seasoned chef or a novice in
+            the kitchen, the world of cooking is a vast and fascinating one to
             explore.
           </p>
           <Link

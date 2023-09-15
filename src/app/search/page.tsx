@@ -62,8 +62,8 @@ const Search = () => {
         </div>
         {!result && <p className="text-red-500">Whoops! No results found!</p>}
         <div className="flex flex-wrap items-center justify-center lg:w-[80vw] md:w-[100vw]">
-          {result?.map((ele) => (
-            <Card meal={ele} />
+          {result?.map((ele, index) => (
+            <Card meal={ele} key={index} />
           ))}
         </div>
       </div>

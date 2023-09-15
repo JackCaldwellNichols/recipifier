@@ -36,12 +36,12 @@ const Random = () => {
         {meal.map((cat) => (
           <div
             className="h-[60vh] flex flex-col md:flex-row items-center justify-center w-full  md:w-[70vw] xl:w-[80vw] xl:h-[60vh] gap-8 p-8 bg-[#E4E4D0]  rounded-lg"
-            key={cat.idMeal}
+            key={cat["idMeal"]}
           >
-            {cat.strMealThumb && (
+            {cat["strMealThumb"] && (
               <div className="relative flex-1  w-full h-10vh md:h-full flex">
                 <Image
-                  src={cat.strMealThumb}
+                  src={cat["strMealThumb"]}
                   alt=""
                   fill
                   className="object-cover rounded-md"
@@ -50,16 +50,18 @@ const Random = () => {
             )}
             <div className="flex-1 flex flex-col gap-4 h-full items-center md:items-start justify-start">
               <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl ">
-                {cat.strMeal}
+                {cat["strMeal"]}
               </h1>
-              <span>Cuisine: {cat.strArea}</span>
-              <span>Meal Type: {cat.strCategory}</span>
+              <span>Cuisine: {cat["strArea"]}</span>
+              <span>Meal Type: {cat["strCategory"]}</span>
               <span className="flex items-center gap-2">
                 <LuVegan /> Vegetarian:
-                {cat.strCategory === "Vegetarian" ? "Yes" : "No"}
+                {cat["strCategory"] === "Vegetarian" ? "Yes" : "No"}
               </span>
               <Link
-                href={cat.idMeal === null ? `/` : `/recipes/${cat.idMeal}`}
+                href={
+                  cat["idMeal"] === null ? `/` : `/recipes/${cat["idMeal"]}`
+                }
                 className="bg-[#94A684] text-white p-2 rounded-md  hover:bg-[#004225]"
               >
                 See Recipe

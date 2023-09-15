@@ -54,18 +54,17 @@ const Recipe = ({ params }) => {
   };
   getMeasures();
 
-  console.log(empty);
   return (
     <div className="w-full m-auto">
       {recipe?.map((item) => (
         <div
-          key={item.idMeal}
+          key={item["idMeal"]}
           className="flex flex-col items-center gap-8  py-8 w-full"
         >
           <div className="flex flex-col lg:flex-row gap-8 md:gap-20 w-[70vw] justify-between">
             <div className="lg:flex-1  h-60 lg:h-80 relative border-2 border-[#94A684]">
               <Image
-                src={item.strMealThumb}
+                src={item["strMealThumb"]}
                 fill
                 className="object-cover"
                 alt=""
@@ -73,7 +72,7 @@ const Recipe = ({ params }) => {
             </div>
             <div className="flex-1 flex flex-col gap-4">
               <h1 className="text-center lg:text-left text-3xl md:text-4xl md:text-5xl lg:text-6xl font-bold capitalize text-[#94A684]">
-                {item.strMeal}
+                {item["strMeal"]}
               </h1>
               <h2 className="text-justify">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
@@ -84,8 +83,8 @@ const Recipe = ({ params }) => {
               </h2>
               <p className="hidden md:block">
                 <strong>Source: </strong>
-                <Link href={item.strSource} target="_blank">
-                  {item.strSource}
+                <Link href={item["strSource"]} target="_blank">
+                  {item["strSource"]}
                 </Link>
               </p>
             </div>
@@ -94,10 +93,10 @@ const Recipe = ({ params }) => {
             <div className="flex flex-col gap-4">
               <div className="lg:w-[50vw]">
                 <h2 className="text-2xl font-bold">How to Make</h2>
-                <p className="text-justify">{item.strInstructions}</p>
+                <p className="text-justify">{item["strInstructions"]}</p>
               </div>
               <div className="flex">
-                {item.strTags?.split(",").map((ele, i) => (
+                {item["strTags"]?.split(",").map((ele, i) => (
                   <div key={i} className="mx-2">
                     <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                       #{ele}
@@ -105,13 +104,13 @@ const Recipe = ({ params }) => {
                   </div>
                 ))}
               </div>
-              {item.strYoutube ? (
+              {item["strYoutube"] ? (
                 <div className="flex flex-col  py-4 gap-4 hidden md:block">
                   <h2 className="text-2xl font-bold">Watch Video</h2>
                   <div className="">
                     <ReactPlayer
                       controls
-                      url={item.strYoutube}
+                      url={item["strYoutube"]}
                       width={400}
                       height={300}
                     />

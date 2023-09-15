@@ -35,14 +35,14 @@ const Random = () => {
           {cats.map((cat) => (
             <div
               className="w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-[#E4E4D0] transition-all duration-300 md:w-[50vw] xl:w-[33vw] xl:h-[60vh]"
-              key={cat.idCategory}
+              key={cat["idCategory"]}
             >
               <div className="relative flex-1 w-full flex items-center justify-center p-4">
                 <Image
                   src={
-                    cat.strCategory === "Goat"
+                    cat["strCategory"] === "Goat"
                       ? "/goat.png"
-                      : cat.strCategoryThumb
+                      : cat["strCategoryThumb"]
                   }
                   alt=""
                   width={300}
@@ -52,10 +52,10 @@ const Random = () => {
               </div>
               <div className="flex-1 flex flex-col gap-4 items-center justify-start">
                 <h1 className="text-xl font-bold uppercase xl:text-2xl 2xl:text-3xl">
-                  {cat.strCategory}
+                  {cat["strCategory"]}
                 </h1>
                 <Link
-                  href={`/categories/${cat.strCategory}`}
+                  href={`/categories/${cat["strCategory"]}`}
                   className="bg-[#94A684] text-white p-2 rounded-md mt-4"
                 >
                   See Recipes
