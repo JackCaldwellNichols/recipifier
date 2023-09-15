@@ -32,14 +32,14 @@ const Random = () => {
           To spark your imagination...
         </h1>
       </div>
-      <div className="w-screen text-[#94A684] flex items-center justify-center h-[60vh] md:h-[80vh] bg-[#E4E4D0] md:bg-white">
+      <div className="w-screen text-[#94A684] flex items-center justify-center h-[70vh] md:h-[80vh] bg-[#E4E4D0] md:bg-white">
         {meal.map((cat) => (
           <div
-            className="h-[60vh] flex flex-col md:flex-row items-center justify-center w-full  md:w-[70vw] xl:w-[80vw] xl:h-[60vh] gap-8 p-8 bg-[#E4E4D0]  rounded-lg"
+            className="h-full flex flex-col md:flex-row items-center justify-center w-full  md:w-[70vw] xl:w-[80vw] xl:h-[60vh] gap-8 p-8 bg-[#E4E4D0]  rounded-lg"
             key={cat["idMeal"]}
           >
             {cat["strMealThumb"] && (
-              <div className="relative flex-1  w-full h-10vh md:h-full flex">
+              <div className="relative flex-1 w-[90%] flex-1 md:h-full flex">
                 <Image
                   src={cat["strMealThumb"]}
                   alt=""

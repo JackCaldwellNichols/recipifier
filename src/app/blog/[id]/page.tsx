@@ -11,7 +11,7 @@ const page = () => {
       <div className="relative h-80 w-full my-4">
         <Image src="/post.png" fill alt="" className="object-cover w-full" />
       </div>
-      <p className="text-justify md:text-xl">
+      <p className="text-justify text-xl lg:text-1xl">
         Cooking is an age-old art that has evolved over centuries, transcending
         cultures and boundaries. It&#39;s a skill that combines science,
         creativity, and tradition to produce delicious and nourishing meals.

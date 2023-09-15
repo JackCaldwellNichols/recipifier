@@ -10,13 +10,13 @@ const Blog = () => {
           From the blog...
         </h1>
       </div>
-      <div className="bg-[#004225] h-[75vh] flex flex-col md:flex-row">
+      <div className="bg-[#004225] h-max flex flex-col md:flex-row">
         <div className="flex-1 flex flex-col items-center justify-center text-center gap-8 p-6">
           <h1 className="text-white text-4xl font-bold xl:text-6xl">
             Mastering the Art of Culinary Creations: A Journey into the World of
             Cooking
           </h1>
-          <p className="text-white xl:text-xl">
+          <p className="text-white text-xl lg:text-1xl">
             Cooking is an age-old art that has evolved over centuries,
             transcending cultures and boundaries. It&#39;s a skill that combines
             science, creativity, and tradition to produce delicious and
