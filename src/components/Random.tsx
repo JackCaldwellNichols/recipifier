@@ -24,7 +24,7 @@ const Random = () => {
     };
     getRandom();
   }, []);
-  console.log(meal);
+
   return (
     <>
       <div className="flex items-center justify-center p-4 h-[10vh] md:h-[20vh] border-b-2 border-t-2 border-t-[#94A684] border-b-[#94A684]">

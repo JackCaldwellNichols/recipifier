@@ -27,7 +27,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/Context/ListContext.js"
+    "src/Context/ListContext.js",
+    "src/components/FavouriteContext.js",
+    "src/components/FavouriteContext.js",
+    "src/components/FavouriteContext.js"
   ],
   "exclude": ["node_modules"]
 }

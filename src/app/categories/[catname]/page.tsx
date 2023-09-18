@@ -6,6 +6,7 @@ import Card from "@/components/Card";
 
 interface Props {
   params?: any;
+  item: any;
 }
 
 const MealList = ({ params }: Props) => {
@@ -57,13 +58,12 @@ const MealList = ({ params }: Props) => {
       <div className="flex flex-wrap items-center justify-center lg:w-[80vw] md:w-[100vw]">
         {meals
           // .filter((item) => {
-          //   if (text === null) {
-          //     return meals;
-          //   }
-
-          //   if (item["strMeal"].toLowerCase().includes(text.toLowerCase())) {
-          //     return item;
-          //   }
+          // if (text === null) {
+          //   return meals;
+          // }
+          // if (item["strMeal"].toLowerCase().includes(text.toLowerCase())) {
+          //   return item;
+          // }
           // })
           .map((ele, index) => (
             <Card meal={ele} key={index} />

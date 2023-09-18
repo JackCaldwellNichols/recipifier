@@ -1,9 +1,16 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import Menu from "./Menu";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
+import Image from "next/image";
 
 const Navbar = () => {
-  const user = false;
+  const { data: session, status } = useSession();
+
+  const handleClick = () => {
+    signOut();
+  };
   return (
     <div className="h-12 bg-[#94A684] text-white p-4 flex justify-between items-center  uppercase md:h-24 lg:p-20 xl:p-20">
       <div className="hidden md:flex gap-4 flex-1">
@@ -19,12 +26,24 @@ const Navbar = () => {
       <div className="md:hidden">
         <Menu />
       </div>
-      <div className="hidden md:flex gap-4 flex-1 justify-end">
-        {user && <Link href="/profile">Profile</Link>}
-        {!user ? (
+      <div className="hidden md:flex gap-4 flex-1 justify-end items-center">
+        {status === "authenticated" ? (
+          <Link href="/profile">
+            <Image
+              src={session?.user?.image ?? ""}
+              alt=""
+              width={50}
+              height={50}
+              className="rounded-full border-2 border-white"
+            />
+          </Link>
+        ) : null}
+        {status !== "authenticated" ? (
           <Link href="/login">Login</Link>
         ) : (
-          <Link href="/">Logout</Link>
+          <span onClick={handleClick} className="cursor-pointer">
+            Logout
+          </span>
         )}
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { LuAlignRight } from "react-icons/lu";
 import { AiOutlineClose } from "react-icons/ai";
@@ -13,7 +13,7 @@ const links = [
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
-  const user = false;
+  const session = useSession();
   return (
     <div>
       {!open ? (
@@ -32,14 +32,17 @@ const Menu = () => {
               {link.title}
             </Link>
           ))}
-          {!user ? (
+          {session.status === "authenticated" ? (
+            <Link href="/profile" onClick={() => setOpen(false)}>
+              Profile
+            </Link>
+          ) : null}
+          {session.status === "unauthenticated" ? (
             <Link href="/login" onClick={() => setOpen(false)}>
               Login
             </Link>
           ) : (
-            <Link href="/profile" onClick={() => setOpen(false)}>
-              Profile
-            </Link>
+            <span onClick={() => setOpen(false)}>Logout</span>
           )}
         </div>
       )}

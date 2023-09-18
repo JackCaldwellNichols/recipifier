@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
+import { AiFillHeart } from "react-icons/ai";
 
 interface Props {
   meal?: any;
@@ -20,19 +23,6 @@ const Card = ({ meal }: Props) => {
           nihil.
         </p>
       </div>
-      {/* <div className="px-6 pt-4 pb-2">
-        {meal.strTags
-          ?.split(",")
-          .splice(0, 2)
-          .map((ele, i) => (
-            <span
-              key={i}
-              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >
-              #{ele}
-            </span>
-          ))}
-      </div> */}
     </div>
   );
 };
