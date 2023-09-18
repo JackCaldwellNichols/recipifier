@@ -6,7 +6,6 @@ import Card from "@/components/Card";
 
 interface Props {
   params?: any;
-  item: any;
 }
 
 const MealList = ({ params }: Props) => {
